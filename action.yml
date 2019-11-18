@@ -7,17 +7,13 @@ inputs:
   publish-profile:
     description: 'Publish profile (*.publishsettings) file contents with Web Deploy secrets'
     required: true
-  app-name:
-    description: 'Name of the Azure Web App'
+  webjob-name:
+    description: 'Name of the Azure Web Job'
     required: true
   schedule-name:
     description: 'triggered or continuous'
     required: true
     default: triggered
-  slot-name:
-    description: 'Enter an existing Slot other than the Production slot'
-    required: false
-    default: 'production'
 runs:
   using: node12
   main: 'index.js'

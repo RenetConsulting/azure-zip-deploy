@@ -8,6 +8,7 @@ try {
   const zipFile = core.getInput('zip-file');
   const publishProfile = core.getInput('publish-profile');
   const scheduleName = core.getInput('schedule-name');
+  const webJobName = core.getInput('webjob-name');
   
   const profile = xml2json.xml2json(publishProfile);
   const msDeployProfile = profile.publishData.publishProfile.find(x => x.publishMethod === 'MSDeploy');
