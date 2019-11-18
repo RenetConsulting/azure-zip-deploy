@@ -9,14 +9,14 @@ try {
   const publishProfile = core.getInput('publish-profile');
   const scheduleName = core.getInput('schedule-name');
   const webJobName = core.getInput('webjob-name');
-  
+
   const profile = xml2json.xml2json(publishProfile);
   const msDeployProfile = profile.publishData.publishProfile.find(x => x.publishMethod === 'MSDeploy');
 
   const userName = msDeployProfile.userName;
   const password = msDeployProfile.userPWD;
 
-  const authHeader = `Basic ${btoa(`${userName}:${password}`)}`;
+  const authHeader = `Basic ${Buffer.from(`${userName}:${password}`).toString('base64')}`;
 
   const apiUrl = `${msDeployProfile.destinationAppUrl}/api`;
 
