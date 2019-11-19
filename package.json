@@ -12,6 +12,7 @@
   "dependencies": {
     "@actions/core": "^1.2.0",
     "@actions/github": "^1.1.0",
+    "node-stream-zip": "^1.8.2",
     "request": "^2.88.0",
     "xml2json-light": "^1.0.6"
   }
