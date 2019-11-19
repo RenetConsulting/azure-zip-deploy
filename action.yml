@@ -1,5 +1,5 @@
-name: Azure Webjob deploy
-description: Deploy web job
+name: Azure Zip Deploy
+description: Deploy zipfile to zip deploy service
 inputs:
   zip-file:
     description: the zip file
@@ -7,13 +7,6 @@ inputs:
   publish-profile:
     description: 'Publish profile (*.publishsettings) file contents with Web Deploy secrets'
     required: true
-  webjob-name:
-    description: 'Name of the Azure Web Job'
-    required: true
-  schedule-name:
-    description: 'triggered or continuous'
-    required: true
-    default: triggered
 runs:
   using: node12
   main: 'dist/index.js'
