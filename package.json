@@ -1,5 +1,5 @@
 {
-  "name": "azure-webjob-deploy",
+  "name": "azure-zip-deploy",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
