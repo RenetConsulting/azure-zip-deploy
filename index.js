@@ -35,7 +35,7 @@ try {
     zip.close()
   });
 
-  fs.createReadStream(zipFile).pipe(request.post(apiUrl, {
+  fs.createReadStream(zipFile).pipe(request.put(apiUrl, {
     headers: {
       Authorization: authHeader
     }
