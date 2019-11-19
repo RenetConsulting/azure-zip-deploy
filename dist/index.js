@@ -16013,9 +16013,7 @@ try {
 
   const authHeader = `Basic ${Buffer.from(`${userName}:${password}`).toString('base64')}`;
 
-  const apiUrl = `https://${msDeployProfile.publishUrl}/api/zipdeploy`;
-  //const apiUrl = 'https://enqjpxnnm69tnwq.m.pipedream.net';
-  //const apiUrl = 'https://en3oh5fsaafse.x.pipedream.net';
+  const apiUrl = `https://${msDeployProfile.publishUrl}/api/zip/site/wwwroot/`;
 
   console.log(apiUrl);
   
@@ -16033,7 +16031,7 @@ try {
     zip.close()
   });
 
-  fs.createReadStream(zipFile).pipe(request.post(apiUrl, {
+  fs.createReadStream(zipFile).pipe(request.put(apiUrl, {
     headers: {
       Authorization: authHeader
     }
