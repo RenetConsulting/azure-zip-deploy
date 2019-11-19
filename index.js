@@ -16,8 +16,8 @@ try {
 
   const authHeader = `Basic ${Buffer.from(`${userName}:${password}`).toString('base64')}`;
 
-  //const apiUrl = `https://${msDeployProfile.publishUrl}/api/zipdeploy`;
-  const apiUrl = 'https://en3oh5fsaafse.x.pipedream.net';
+  const apiUrl = `https://${msDeployProfile.publishUrl}/api/zipdeploy`;
+  //const apiUrl = 'https://en3oh5fsaafse.x.pipedream.net';
 
   fs.createReadStream(zipFile).pipe(request.post(apiUrl, {
     headers: {
