@@ -17,7 +17,7 @@ try {
 
   const authHeader = `Basic ${Buffer.from(`${userName}:${password}`).toString('base64')}`;
 
-  const apiUrl = `https://${msDeployProfile.publishUrl}/api/zip/site/wwwroot/`;
+  const apiUrl = `https://${msDeployProfile.publishUrl}/api/zipdeploy`;
 
   console.log(apiUrl);
   
@@ -35,7 +35,7 @@ try {
     zip.close()
   });
 
-  fs.createReadStream(zipFile).pipe(request.put(apiUrl, {
+  fs.createReadStream(zipFile).pipe(request.post(apiUrl, {
     headers: {
       Authorization: authHeader
     }
